@@ -66,99 +66,121 @@
             padding-top: 50px;
         }
 
+        .processingWrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            padding-top: 50px;
+        }
+
+        .loadingContainer1 {
+            margin-left: 10px;
+        }
+
+        .loadingContainer1 div {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            float: left;
+            margin: 0 5px;
+            background: #FF3434;
+            transform: scale(0);
+        }
+
+        .loadingContainer1 .ball1 {
+            z-index: 1;
+            -moz-animation: grow 4.4s infinite ease-in-out;
+            -webkit-animation: grow 4.4s infinite ease-in-out;
+        }
+
+        .loadingContainer1 .ball2 {
+            -moz-animation: grow 4.4s infinite ease-in-out;
+            -webkit-animation: grow 4.4s infinite ease-in-out;
+            -webkit-animation-delay: 0.2s;
+            animation-delay: 0.5s;
+        }
+
+        .loadingContainer1 .ball3 {
+            -moz-animation: grow 4.4s infinite ease-in-out;
+            -webkit-animation: grow 4.4s infinite ease-in-out;
+            -webkit-animation-delay: 0.4s;
+            animation-delay: 1s;
+        }
+
+        @-moz-keyframes grow {
+            0% {
+                -moz-transform: scale(0);
+            }
+
+            25% {
+                -moz-transform: scale(1);
+            }
+
+            50% {
+                -moz-transform: scale(0);
+            }
+
+            75% {
+                -moz-transform: scale(1);
+                background: #FF3434;
+            }
+
+            100% {
+                -moz-transform: scale(0);
+                background: #FF3434;
+            }
+        }
+
+        @-webkit-keyframes grow {
+            0% {
+                -webkit-transform: scale(0);
+            }
+
+            25% {
+                -webkit-transform: scale(1);
+            }
+
+            50% {
+                -webkit-transform: scale(0);
+            }
+
+            75% {
+                -webkit-transform: scale(1);
+                background: #FF3434;
+            }
+
+            100% {
+                -webkit-transform: scale(0);
+                background: #FF3434;
+            }
+        }
+
         .indPoint {
             display: flex;
             flex-direction: row;
             align-items: center;
             margin: 0 25px;
+            animation-name: pointsAppear;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
             opacity: 0;
         }
 
         .pointOne {
-            animation-name: loadingPoints;
-            animation-delay: 700ms;
-            animation-duration: 1;
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
+            animation-delay: 500ms;
         }
-        
+
         .pointTwo {
-            animation-name: loadingPoints;
-            animation-delay: 1400ms;
-            animation-duration: 1;
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
+            animation-delay: 1000ms;
         }
-        
+
         .pointThree {
-            animation-name: loadingPoints;
-            animation-delay: 2200ms;
-            animation-duration: 1;
-            animation-fill-mode: forwards;
-            animation-timing-function: ease-in-out;
+            animation-delay: 1500ms;
         }
 
-        .processingWrapper {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            padding-top: 50px;
-        }
-
-        .dotsWrapper {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-end;
-            margin-left: 10px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            margin: 0 5px;
-            background-color: transparent;
-            border-radius: 50%;
-            animation-name: loadingDots;
-            animation-duration: 4000ms;
-            animation-iteration-count: infinite;
-        }
-
-        .dotOne {
-            animation-delay: 700ms;
-        }
-
-        .dotTwo {
-            animation-delay: 1400ms;
-        }
-
-        .dotThree {
-            animation-delay: 2100ms;
-        }
-
-        @keyframes loadingDots {
-            0% {
-                background-color: transparent;
-            }
-
-            25% {
-                background-color: #FF3434;
-            }
-
-            50% {
-                background-color: #FF3434;
-            }
-
-            75% {
-                background-color: transparent;
-            }
-
-            100% {
-                background-color: transparent;
-            }
-        }
-
-        @keyframes loadingPoints {
+        @keyframes pointsAppear {
             0% {
                 opacity: 0;
             }
@@ -252,10 +274,10 @@
 
         <div class="processingWrapper">
             <p>Processing your request</p>
-            <div class="dotsWrapper">
-                <div class="dot dotOne"></div>
-                <div class="dot dotTwo"></div>
-                <div class="dot dotThree"></div>
+            <div class="loadingContainer1">
+                <div class="ball1"></div>
+                <div class="ball2"></div>
+                <div class="ball3"></div>
             </div>
         </div>
 

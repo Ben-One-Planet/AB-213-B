@@ -1,0 +1,200 @@
+.loaderWrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .loaderWrapper p {
+        font-size: 26px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .loaderWrapper p span {
+        color: #0C317A;
+        font-weight: bold;
+    }
+
+    .processingWrapper p {
+        margin: 0;
+        line-height: 0.8;
+        font-weight: bold;
+    }
+
+    .indPoint p {
+        margin: 0;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .pointsWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 50px;
+    }
+
+    .processingWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-end;
+        padding-top: 50px;
+    }
+
+    .loadingContainer1 {
+        margin-left: 10px;
+    }
+
+    .loadingContainer1 div {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        float: left;
+        margin: 0 5px;
+        background: #FF3434;
+        transform: scale(0);
+    }
+
+    .loadingContainer1 .ball1 {
+        z-index: 1;
+        -moz-animation: grow 4.4s infinite ease-in-out;
+        -webkit-animation: grow 4.4s infinite ease-in-out;
+    }
+
+    .loadingContainer1 .ball2 {
+        -moz-animation: grow 4.4s infinite ease-in-out;
+        -webkit-animation: grow 4.4s infinite ease-in-out;
+        -webkit-animation-delay: 0.2s;
+        animation-delay: 0.5s;
+    }
+
+    .loadingContainer1 .ball3 {
+        -moz-animation: grow 4.4s infinite ease-in-out;
+        -webkit-animation: grow 4.4s infinite ease-in-out;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 1s;
+    }
+
+    @-moz-keyframes grow {
+        0% {
+            -moz-transform: scale(0);
+        }
+
+        25% {
+            -moz-transform: scale(1);
+        }
+
+        50% {
+            -moz-transform: scale(0);
+        }
+
+        75% {
+            -moz-transform: scale(1);
+            background: #FF3434;
+        }
+
+        100% {
+            -moz-transform: scale(0);
+            background: #FF3434;
+        }
+    }
+
+    @-webkit-keyframes grow {
+        0% {
+            -webkit-transform: scale(0);
+        }
+
+        25% {
+            -webkit-transform: scale(1);
+        }
+
+        50% {
+            -webkit-transform: scale(0);
+        }
+
+        75% {
+            -webkit-transform: scale(1);
+            background: #FF3434;
+        }
+
+        100% {
+            -webkit-transform: scale(0);
+            background: #FF3434;
+        }
+    }
+
+    .indPoint {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 25px;
+        animation-name: pointsAppear;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        opacity: 0;
+    }
+
+    .pointOne {
+        animation-delay: 500ms;
+    }
+
+    .pointTwo {
+        animation-delay: 1000ms;
+    }
+
+    .pointThree {
+        animation-delay: 1500ms;
+    }
+
+    @keyframes pointsAppear {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .break {
+        display: block;
+    }
+
+    @media only screen and (max-width: 700px) {
+        .loaderWrapper p {
+            font-size: 18px;
+            padding: 0 30px;
+            line-height: 162%;
+        }
+
+        .pointsWrapper {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .processingWrapper {
+            padding-top: 40px;
+        }
+
+        .break {
+            display: none;
+        }
+
+        .checkMark {
+            width: 18px;
+            height: 18px;
+        }
+
+        .indPoint {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px 0;
+        }
+    }
